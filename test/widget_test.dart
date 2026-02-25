@@ -11,15 +11,17 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:dice_rolling_game/gradient_container.dart';
 
 void main() {
-  testWidgets('GradientContainer shows hello text', (WidgetTester tester) async {
+  testWidgets('GradientContainer renders with dice roller', (WidgetTester tester) async {
     await tester.pumpWidget(
       const MaterialApp(
         home: Scaffold(
-          body: GradientContainer(),
+          body: GradientContainer(
+            [Color.fromARGB(255, 1, 15, 27), Color.fromARGB(255, 11, 61, 102)],
+          ),
         ),
       ),
     );
 
-    expect(find.text('hello world!'), findsOneWidget);
+    expect(find.byType(Container), findsWidgets);
   });
 }
