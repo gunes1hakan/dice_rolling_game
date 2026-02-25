@@ -11,18 +11,15 @@ class GradientContainer extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         gradient: LinearGradient(
-          colors: colors,                                                                             // 3
+          colors: colors, 
           begin: startAlignment,
           end: endAlignment,
         ),
       ),
-      child: const Center(
-        child: Text(
-          "hello world!",
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: 28,
-          ),
+      child: Center(
+        child: Image.asset(
+          "assets/images/dice-2.png",
+          width: 200,
         ),
       ),
     );
