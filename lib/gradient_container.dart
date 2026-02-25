@@ -15,21 +15,30 @@ class GradientContainer extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         gradient: LinearGradient(
-          colors: colors,                                             // 5
+          colors: colors,                                             
           begin: startAlignment,
           end: endAlignment,
         ),
       ),
       child: Center(
         child: Column(
+          mainAxisSize: MainAxisSize.min,
           children: [
             Image.asset(
               "assets/images/dice-2.png",
               width: 200,
             ),
-            const TextButton(
+            SizedBox(height: 20),
+            TextButton(
               onPressed: rollDice,
-              child: Text("Roll Dice"),
+              style: TextButton.styleFrom(
+                //padding: const EdgeInsets.only(top: 20),
+                foregroundColor: Colors.white,
+                textStyle: const TextStyle(
+                  fontSize: 28,
+                ),
+              ),
+              child: const Text("Roll Dice"),
             ),
           ],
         ),
